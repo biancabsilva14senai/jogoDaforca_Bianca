@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo da Forca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+            background-color: #fafcd3;
+        }
+
+        #titulo{
+            color: rgb(179, 61, 80);
+        }
+
+
+        #palavra-secreta {
+            font-size: 2.5rem;
+            letter-spacing: 10px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: rgb(179, 61, 80);
+        }
+        input {
+            font-size: 1.2rem;
+            width: 45px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 5px;
+            color: rgb(179, 61, 80);
+        }
+        button {
+            font-size: 1.1rem;
+            padding: 6px 15px;
+            cursor: pointer;
+            color: rgb(179, 61, 80);
+        }
+        #letras-erradas {
+            color: #d9534f;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        #btn-reiniciar {
+            margin-top: 20px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Jogo da Forca</h1>
+
+    <div id="palavra-secreta"></div>
+
+    <div>
+        <input type="text" id="campo-letra" maxlength="1" placeholder="?" autofocus>
+        <button id="btn-testar">Testar Letra</button>
+    </div>
+
+    <p>Vidas restantes: <strong id="vidas">6</strong></p>
+    <p>Letras incorretas: <span id="letras-erradas"></span></p>
+
+    <div id="status"></div>
+
+    <button id="btn-reiniciar">Reiniciar Jogo</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
