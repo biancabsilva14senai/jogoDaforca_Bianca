@@ -34,8 +34,12 @@ function iniciarJogo() {
         palavraOculta.push("_");
     }
 
+    telaVidas.innerHTML = "";
+    for (let i = 0; i < 6; i++) {
+        telaVidas.innerHTML += `<span class="coracao">❤️</span>`;
+    }
+
     telaPalavra.innerHTML = palavraOculta.join(" ");
-    telaVidas.innerHTML = vidasRestantes;
     telaErradas.innerHTML = "";
     statusMensagens.innerHTML = "";
 
@@ -75,7 +79,10 @@ function testarLetra() {
         telaPalavra.innerHTML = palavraOculta.join(" ");
     } else {
         vidasRestantes--;
-        telaVidas.innerHTML = vidasRestantes;
+        
+        let coracoes = document.querySelectorAll(".coracao");
+        coracoes[vidasRestantes].classList.add("sumir");
+
         telaErradas.innerHTML += `${letra} `;
     }
 
